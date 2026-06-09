@@ -1,0 +1,7 @@
+{
+  "name": "project-cartographer",
+  "version": "0.3.0",
+  "description": "A token-cheap, safety-first toolkit for Claude Code: reads a project properly (deterministic dependency graph + ctags symbol index), recommends + scaffolds the right context docs, routes tasks to exact file:line targets, verifies changes with scoped checks, confirms library APIs against installed types, and guards against destructive commands and leaked secrets.",
+  "author": { "name": "Charanjit" },
+  "keywords": ["context", "project-map", "symbol-index", "routing", "token-efficiency", "verification", "api-check", "safety", "hooks", "claude-md", "architecture"]
+}

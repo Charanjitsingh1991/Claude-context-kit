@@ -1,0 +1,19 @@
+{
+  "name": "claude-context-kit",
+  "owner": {
+    "name": "Charanjit",
+    "url": "https://github.com/Charanjitsingh1991/claude-context-kit"
+  },
+  "metadata": {
+    "description": "A token-cheap, safety-first toolkit for Claude Code: map the repo, route to exact file:line, verify changes, check library APIs against installed types, and block destructive commands / secret leaks.",
+    "version": "0.3.0",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "project-cartographer",
+      "source": "project-cartographer",
+      "description": "Read properly, route cheaply, verify changes, check installed APIs, and guard against destructive commands + secrets. Map + symbol index + hooks."
+    }
+  ]
+}
