@@ -12,9 +12,8 @@
     {
       "name": "project-cartographer",
       "source": {
-        "source": "github",
-        "repo": "Charanjitsingh1991/claude-context-kit",
-        "ref": "main"
+        "source": "url",
+        "url": "https://github.com/Charanjitsingh1991/claude-context-kit.git"
       },
       "description": "Read properly, route cheaply, verify changes, check installed APIs, and guard against destructive commands + secrets. Map + symbol index + hooks."
     }
