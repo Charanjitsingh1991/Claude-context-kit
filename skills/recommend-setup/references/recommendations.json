@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "note": "Heuristic starter map. Ecosystem suggestions are CATEGORIES to confirm against the live marketplace and MCP registry, not pinned packages. Edit freely.",
+  "signals": {
+    "next": { "deps": ["next"] },
+    "react": { "deps": ["react"] },
+    "vue": { "deps": ["vue"] },
+    "nuxt": { "deps": ["nuxt"] },
+    "svelte": { "deps": ["svelte", "@sveltejs/kit"] },
+    "astro": { "deps": ["astro"] },
+    "electron": { "deps": ["electron", "electron-builder"] },
+    "express": { "deps": ["express"] },
+    "fastify": { "deps": ["fastify"] },
+    "nest": { "deps": ["@nestjs/core"] },
+    "prisma": { "deps": ["@prisma/client", "prisma"], "files": ["prisma/schema.prisma"] },
+    "drizzle": { "deps": ["drizzle-orm"] },
+    "mongodb": { "deps": ["mongodb", "mongoose"] },
+    "postgres": { "deps": ["pg", "postgres"] },
+    "redis": { "deps": ["redis", "ioredis"] },
+    "graphql": { "deps": ["graphql", "@apollo/server", "@apollo/client"] },
+    "trpc": { "deps": ["@trpc/server"] },
+    "tailwind": { "deps": ["tailwindcss"] },
+    "auth": { "deps": ["next-auth", "lucia", "@clerk/nextjs", "passport", "jsonwebtoken", "@auth/core"] },
+    "payments": { "deps": ["stripe", "@stripe/stripe-js"] },
+    "firebase": { "deps": ["firebase", "firebase-admin"] },
+    "aws": { "deps": ["aws-sdk", "@aws-sdk/client-s3"] },
+    "testing": { "deps": ["vitest", "jest", "@playwright/test", "cypress"] },
+    "monorepo": { "deps": ["turbo", "nx"], "files": ["pnpm-workspace.yaml", "turbo.json", "nx.json"] },
+    "docker": { "files": ["Dockerfile", "docker-compose.yml", "docker-compose.yaml", "compose.yaml"] }
+  },
+  "docs": {
+    "always": [
+      { "path": "docs/ARCHITECTURE.md", "why": "System overview + module boundaries; anchors every future task." },
+      { "path": "CONVENTIONS.md", "why": "The non-obvious rules contributors and Claude must follow." }
+    ],
+    "bySignal": {
+      "prisma": [{ "path": "docs/data-model.md", "why": "Schema decisions, relations, migration policy." }],
+      "drizzle": [{ "path": "docs/data-model.md", "why": "Schema + migration policy." }],
+      "mongodb": [{ "path": "docs/data-model.md", "why": "Collections, indexes, access patterns." }],
+      "auth": [{ "path": "docs/security.md", "why": "Auth/session model, token handling, threat notes." }],
+      "payments": [{ "path": "docs/security.md", "why": "Payment flow + sensitive-data handling." }],
+      "graphql": [{ "path": "docs/api.md", "why": "Schema/resolver contract." }],
+      "trpc": [{ "path": "docs/api.md", "why": "Router/procedure contract." }],
+      "express": [{ "path": "docs/api.md", "why": "Endpoint contract, error model, status codes." }],
+      "fastify": [{ "path": "docs/api.md", "why": "Endpoint contract, error model, status codes." }],
+      "testing": [{ "path": "docs/testing.md", "why": "What to test, how to run, fixtures/conventions." }],
+      "monorepo": [{ "path": "docs/workspaces.md", "why": "Package boundaries, allowed imports, build order." }],
+      "docker": [{ "path": "docs/deployment.md", "why": "Environments, build/run, rollback." }],
+      "electron": [{ "path": "docs/packaging.md", "why": "Main/renderer split, build targets, signing/update." }]
+    }
+  },
+  "ecosystem": {
+    "verify": "These are CATEGORIES, not endorsements. Confirm exact, current options with /plugin marketplace and the MCP registry (the connector picker). Availability and names change.",
+    "bySignal": {
+      "prisma": { "mcp": ["A Postgres/SQL database MCP (inspect schema, run safe read-only queries)"], "plugins": ["A Prisma/database plugin, if available in the marketplace"], "skills": [] },
+      "postgres": { "mcp": ["A Postgres MCP server for schema inspection and safe queries"], "plugins": [], "skills": [] },
+      "graphql": { "mcp": [], "plugins": ["An Apollo/GraphQL plugin (schema design, query optimization)"], "skills": [] },
+      "next": { "mcp": [], "plugins": [], "skills": ["A frontend-design skill for component/UI quality"] },
+      "vue": { "mcp": [], "plugins": [], "skills": ["A frontend-design skill"] },
+      "testing": { "mcp": [], "plugins": ["A PR-review / test-coverage plugin"], "skills": [] },
+      "aws": { "mcp": ["An AWS MCP server scoped to your account"], "plugins": [], "skills": [] },
+      "firebase": { "mcp": ["A Firebase MCP server"], "plugins": [], "skills": [] },
+      "payments": { "mcp": ["A Stripe MCP server (test-mode/read operations)"], "plugins": [], "skills": [] },
+      "monorepo": { "mcp": [], "plugins": ["A workspace/turbo-aware plugin, if available"], "skills": [] }
+    }
+  }
+}
