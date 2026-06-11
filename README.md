@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🗺️ project-cartographer
+# 🗺️ Project-Cartographer
 
 ### Stop letting Claude Code rediscover your codebase on every task.
 
